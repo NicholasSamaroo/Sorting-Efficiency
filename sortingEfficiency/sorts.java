@@ -114,21 +114,22 @@ public class sorts {
         int left[] = new int[leftBound];
         int right[] = new int[rightBound];
         int iterator = 0;
+        int i;
+        int j;
 
-        for (int i = lower; i <= middle; i++) {
+        for (i = lower; i <= middle; i++) {
             left[iterator] = arr[i];
             iterator++;
         }
 
         iterator = 0;
 
-        for (int j = middle + 1; j <= higher; j++) {
+        for (j = middle + 1; j <= higher; j++) {
             right[iterator] = arr[j];
             iterator++;
         }
-
-        int i = 0;
-        int j = 0;
+        i = 0;
+        j = 0;
         iterator = lower;
 
         while (i < leftBound && j < rightBound) {
