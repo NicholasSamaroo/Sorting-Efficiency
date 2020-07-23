@@ -1,0 +1,1 @@
+Coded Merge sort, Quick sort, Insertion sort, and Selection sort, in order to test their performance on various input sizes.

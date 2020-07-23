@@ -9,17 +9,17 @@ public class sorts {
     private double timeInSeconds;
     private final int seconds = 1000000000;
 
-    public double insertionSort(int[] various_array) {
+    public double insertionSort(int[] variousArray) {
         int holder;
         startTime = System.nanoTime();
 
-        for (int i = 1; i < various_array.length; i++) {
+        for (int i = 1; i < variousArray.length; i++) {
             int j = i;
 
-            while (j > 0 && various_array[j] < various_array[j - 1]) {
-                holder = various_array[j - 1];
-                various_array[j - 1] = various_array[j];
-                various_array[j] = holder;
+            while (j > 0 && variousArray[j] < variousArray[j - 1]) {
+                holder = variousArray[j - 1];
+                variousArray[j - 1] = variousArray[j];
+                variousArray[j] = holder;
                 j--;
             }
         }
@@ -29,26 +29,26 @@ public class sorts {
         return timeInSeconds;
     }
 
-    public double selectionSort(int[] various_array) {
+    public double selectionSort(int[] variousArray) {
         int holder;
 
         startTime = System.nanoTime();
 
-        for (int i = 0; i < various_array.length - 1; i++) {
+        for (int i = 0; i < variousArray.length - 1; i++) {
 
             int smallest = i;
 
-            for (int j = i + 1; j < various_array.length; j++) {
+            for (int j = i + 1; j < variousArray.length; j++) {
 
-                if (various_array[j] < various_array[smallest]) {
+                if (variousArray[j] < variousArray[smallest]) {
                     smallest = j;
                 }
             }
 
             if (smallest != i) {
-                holder = various_array[i];
-                various_array[i] = various_array[smallest];
-                various_array[smallest] = holder;
+                holder = variousArray[i];
+                variousArray[i] = variousArray[smallest];
+                variousArray[smallest] = holder;
             }
         }
 
@@ -91,13 +91,13 @@ public class sorts {
         return i;
     }
 
-    public double quickSort(int[] various_array, int low, int high) {
+    public double quickSort(int[] variousArray, int low, int high) {
         startTime = System.nanoTime();
 
         if (low < high) {
-            int midpoint = partition(various_array, low, high);
-            quickSort(various_array, low, midpoint - 1);
-            quickSort(various_array, midpoint + 1, high);
+            int midpoint = partition(variousArray, low, high);
+            quickSort(variousArray, low, midpoint - 1);
+            quickSort(variousArray, midpoint + 1, high);
         }
 
         endTime = System.nanoTime();
@@ -151,15 +151,15 @@ public class sorts {
         }
     }
 
-    public double mergeSort(int[] various_array, int low, int high) {
+    public double mergeSort(int[] variousArray, int low, int high) {
         startTime = System.nanoTime();
         int midpoint;
 
         if (low < high) {
             midpoint = (low + high) / 2;
-            mergeSort(various_array, low, midpoint);
-            mergeSort(various_array, midpoint + 1, high);
-            merge(various_array, low, midpoint, high);
+            mergeSort(variousArray, low, midpoint);
+            mergeSort(variousArray, midpoint + 1, high);
+            merge(variousArray, low, midpoint, high);
         }
 
         endTime = System.nanoTime();
